@@ -1,9 +1,9 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
 import {onChangeValue1} from '../../../frontend/src/actions';
+import { Calculate } from '../../../frontend/src/components/Calculate';
 import {ICalcAction} from '../../../frontend/src/constans/CalcConstans';
 import calcilateReducer, { initialState } from '../../../frontend/src/reducers/calcilateReducer';
-// import renderer from 'react-test-renderer';
-// import {Link} from 'react-router-dom';
-// import {CalculateConnect} from '../../../frontend/src/containers/calcCont';
 
 describe('[Actions] todoList test', () => {
 
@@ -31,8 +31,17 @@ describe('[Actions] todoList test', () => {
     });
   });
 
-  // it('snapshot1', ( )=> {
-  //   const tree = renderer.create( <CalculateConnect />)
-  // });
+  it('snapshot1', ( ) => {
+    const stateProps = {
+      value1: 0,
+      value2: 0,
+      answer: 0,
+      onChangeValue1: () => 0,
+      onChangeValue2: () => 0,
+      onGetAnswer: () => 0,
+    };
+    const tree = renderer.create( <Calculate { ...stateProps }/>);
+    expect(tree).toMatchSnapshot();
+  });
 
 });

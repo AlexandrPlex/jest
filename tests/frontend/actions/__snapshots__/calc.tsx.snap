@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[Actions] todoList test snapshot1 1`] = `
+<div>
+  <input
+    onChange={[Function]}
+    type="text"
+  />
+  <br />
+  <input
+    onChange={[Function]}
+    type="text"
+  />
+  <br />
+  <input
+    onClick={[Function]}
+    type="submit"
+  />
+  <br />
+  0
+</div>
+`;
