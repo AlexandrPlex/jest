@@ -1,4 +1,5 @@
-import { connect, Dispatch } from 'react-redux';
+import { connect} from 'react-redux';
+import { Dispatch } from 'redux';
 
 import * as acion from 'actions';
 import { Calculate, IDispatchProps, IStateProps } from 'components/Calculate';
@@ -10,7 +11,7 @@ const mapStateToProps = (state: IAppState): IStateProps => ({
   answer: state.calcilateReducer.answer,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<IAppState>): IDispatchProps => ({
+const mapDispatchToProps = (dispatch: Dispatch): IDispatchProps => ({
   onChangeValue1: (value: number) => {
     dispatch(acion.onChangeValue1(value));
   },

@@ -1,5 +1,6 @@
 {
   "compileOnSave": false,
+  "strict": true,
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
