@@ -21,8 +21,7 @@
     "test": "jest --no-cache",
     "coverage": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "deploy": "heroku container:push web",
-    "precommit": "yarn eslint && yarn tslint && yarn stylelint",
-    "prepush": "yarn test"
+    "precommit": "yarn eslint && yarn tslint && yarn stylelint"
   },
   "dependencies": {
     "@types/faker": "^4.1.2",

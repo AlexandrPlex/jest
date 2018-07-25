@@ -1,31 +1,40 @@
 import faker from 'faker';
 import puppeteer from 'puppeteer';
 
-describe('H1 Text', () => {
-  test('h1 loads correctly', async () => {
-    const browser = await puppeteer.launch({
-      headless: false,
-    });
-    const page = await browser.newPage();
+let browser: any;
+let page: any;
 
-    page.emulate({
-      viewport: {
-        width: 500,
-        height: 2400,
-      },
-      userAgent: '',
-    });
+beforeAll(async () => {
+  browser = await puppeteer.launch({
+    headless: false,
+  });
+  page = await browser.newPage();
 
-    await page.goto('http://localhost:3003/');
-    await page.waitForSelector('#root');
-    for (let i = 0; i < 10; i++) {
+  page.emulate({
+    viewport: {
+      width: 500,
+      height: 2400,
+    },
+    userAgent: '',
+  });
+  await page.goto('http://localhost:3003/');
+  await page.waitForSelector('#root');
+}, 16000);
+afterAll(() => {
+  browser.close();
+});
+
+describe('test calc', () => {
+  for (let i = 0; i < 10; i++) {
+    it(`test ${i}`, async () => {
+      await page.$eval('input[name=value1]', (el: any) => {
+        return el.value = '';
+      });
+      await page.$eval('input[name=value2]', (el: any) => {
+        return el.value = '';
+      });
       const value1 = faker.random.number();
       const value2 = faker.random.number();
-      await page.evaluate(() => {
-        document.querySelector('input[name=value1').value = '';
-        document.querySelector('input[name=value2').value = '';
-      });
-
       await page.click('input[name=value1]');
       await page.type('input[name=value1]', String(value1) );
       await page.click('input[name=value2]');
@@ -35,7 +44,6 @@ describe('H1 Text', () => {
         return Number(el.innerHTML);
       });
       expect(nameElement).toBe(value2 + value1);
-    }
-    browser.close();
-  }, 16000);
+    });
+  }
 });

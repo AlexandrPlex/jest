@@ -3,20 +3,27 @@
 exports[`[Actions] todoList test snapshot1 1`] = `
 <div>
   <input
+    name="value1"
     onChange={[Function]}
     type="text"
   />
   <br />
   <input
+    name="value2"
     onChange={[Function]}
     type="text"
   />
   <br />
   <input
+    name="submit"
     onClick={[Function]}
     type="submit"
   />
   <br />
-  0
+  <div
+    id="answer"
+  >
+    0
+  </div>
 </div>
 `;
