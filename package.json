@@ -25,9 +25,11 @@
     "prepush": "yarn test"
   },
   "dependencies": {
+    "@types/faker": "^4.1.2",
     "@types/jest": "22.2.3",
     "@types/materialize-css": "1.0.3",
     "@types/prismjs": "1.9.0",
+    "@types/puppeteer": "^1.5.1",
     "@types/react": "16.3.14",
     "@types/react-dom": "16.0.5",
     "@types/react-redux": "^6.0.4",
@@ -71,6 +73,7 @@
     "eslint-plugin-react": "7.8.2",
     "express": "4.16.3",
     "express-session": "1.15.6",
+    "faker": "^4.1.0",
     "file-loader": "1.1.11",
     "helmet": "3.12.1",
     "history": "4.7.2",
@@ -79,6 +82,7 @@
     "image-webpack-loader": "3.6.0",
     "immutable": "4.0.0-rc.9",
     "jest": "23.0.0",
+    "jest-puppeteer": "^3.2.1",
     "material-design-icons": "3.0.1",
     "materialize-css": "1.0.0-rc.1",
     "mini-css-extract-plugin": "0.4.0",
@@ -94,6 +98,7 @@
     "postcss-loader": "2.1.5",
     "prismjs": "1.14.0",
     "progress-bar-webpack-plugin": "1.11.0",
+    "puppeteer": "^1.6.0-next.1532381444032",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "react-hot-loader": "4.2.0",
@@ -164,7 +169,8 @@
       "js",
       "jsx",
       "ts",
-      "tsx"
+      "tsx",
+      "json"
     ]
   }
 }

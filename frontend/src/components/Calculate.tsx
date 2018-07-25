@@ -31,10 +31,10 @@ export class Calculate extends React.Component<TProps> {
   public render() {
     return (
       <div>
-        <input type='text' onChange={this.onHandleChangeValue1} /><br/>
-        <input type='text' onChange={this.onHandleChangeValue2} /><br/>
-        <input type='submit' onClick={this.onHandleClickAnswer} /><br/>
-        {this.props.answer }
+        <input name='value1' type='text' onChange={this.onHandleChangeValue1} /><br/>
+        <input name='value2' type='text' onChange={this.onHandleChangeValue2} /><br/>
+        <input name='submit' type='submit' onClick={this.onHandleClickAnswer} /><br/>
+        <div id='answer'>{this.props.answer }</div>
       </div>
     );
   }
